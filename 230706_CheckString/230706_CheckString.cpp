@@ -37,7 +37,7 @@ public:
 		return str.size();
 	}
 
-	int GetStringKind(string str)
+	int GetStringKind(const string str)
 	{
 		int result = 0;
 		for (char ch = 'a'; ch <= 'z' ; ch++)
@@ -52,5 +52,38 @@ public:
 			}
 		}
 		return result;
+	}
+
+	bool IsInThisString(const string stringB, char ch)
+	{
+		for (int strIdx = 0; strIdx < stringB.size(); strIdx++)
+		{
+			if (stringB[strIdx] == ch)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	int GetStringKindAll(const string stringA, const string stringB)
+	{
+		int KindAll = 0;
+		for (char ch = 'a'; ch <= 'z'; ch++)
+		{
+			int bFound = false;
+			if (IsInThisString(stringA, ch))
+			{
+				KindAll++;
+			}
+			else
+			{
+				if (IsInThisString(stringB, ch))
+				{
+					KindAll++;
+				}
+			}
+		}
+		return KindAll;
 	}
 };
