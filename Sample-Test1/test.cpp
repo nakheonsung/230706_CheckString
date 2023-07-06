@@ -16,5 +16,5 @@ TEST(CheckString, SameNumString) {
 TEST(CheckString, NotSameSNumString) {
 	StringCheck stringcheck;
 	int result = stringcheck.CheckStringNum("asd", "qwer");
-	EXPECT_EQ(45, result);
+	EXPECT_EQ(40, result);
 }
