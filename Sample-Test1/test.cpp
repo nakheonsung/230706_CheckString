@@ -25,3 +25,10 @@ TEST(CheckString, GetStringKind)
 	int result = stringcheck.GetStringKind("abb");
 	EXPECT_EQ(2, result);
 }
+
+TEST(CheckString, GetStringKindAll)
+{
+	StringCheck stringcheck;
+	int result = stringcheck.GetStringKindAll("abb", "bcc");
+	EXPECT_EQ(3, result);
+}
