@@ -86,4 +86,31 @@ public:
 		}
 		return KindAll;
 	}
+
+	int GetStringCountCompare(const string stringA, const string stringB)
+	{
+		int KindAll = 0;
+		int SameCount = 0;
+		for (char ch = 'a'; ch <= 'z'; ch++)
+		{
+			int bFound = false;
+			if (IsInThisString(stringA, ch))
+			{
+				KindAll++;
+				bFound = true;
+			}
+			if (IsInThisString(stringB, ch))
+			{
+				if (bFound == true)
+				{
+					SameCount++;
+				}
+				else
+				{
+					KindAll++;
+				}
+			}
+		}
+		return 40 * SameCount / KindAll;
+	}
 };

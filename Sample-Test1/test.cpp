@@ -32,3 +32,10 @@ TEST(CheckString, GetStringKindAll)
 	int result = stringcheck.GetStringKindAll("abb", "bcc");
 	EXPECT_EQ(3, result);
 }
+
+TEST(CheckString, GetStringCountCompare)
+{
+	StringCheck stringcheck;
+	int result = stringcheck.GetStringCountCompare("abb", "bcc");
+	EXPECT_EQ(40/3*1, result);
+}
