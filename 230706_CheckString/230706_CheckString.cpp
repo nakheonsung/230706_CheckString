@@ -15,6 +15,20 @@ public:
 		return CalcNotSameNumString(stringA, stringB);
 	}
 
+	bool isDoubleLength(int nShortSize, int nLongSize)
+	{
+		if (nLongSize >= (nShortSize * 2))
+		{
+			return true;
+		}
+		return false;
+	}
+
+	int CalcFromGap(int nGap, int nShortSize)
+	{
+		return MAX_POINT - (MAX_POINT * nGap / nShortSize);
+	}
+
 	int CalcNotSameNumString(const string stringA, const string stringB)
 	{
 		int nGap = 0;
@@ -32,8 +46,9 @@ public:
 			nShortSize = stringA.size();
 			nLongSize = stringB.size();
 		}
-		if (nLongSize >= (nShortSize * 2)) return 0;
-		return MAX_POINT - (MAX_POINT * nGap / nShortSize);
+
+		if (isDoubleLength(nShortSize, nLongSize)) return 0;
+		return CalcFromGap(nGap, nShortSize);
 	}
 
 	int GetSize(string str)
