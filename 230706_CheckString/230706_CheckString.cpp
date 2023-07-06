@@ -36,4 +36,21 @@ public:
 	{
 		return str.size();
 	}
+
+	int GetStringKind(string str)
+	{
+		int result = 0;
+		for (char ch = 'a'; ch <= 'z' ; ch++)
+		{
+			for (int strIdx=0; strIdx<str.size(); strIdx++)
+			{
+				if (str[strIdx] == ch)
+				{
+					result++;
+					break;
+				}
+			}
+		}
+		return result;
+	}
 };
