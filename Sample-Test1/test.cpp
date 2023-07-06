@@ -18,3 +18,24 @@ TEST(CheckString, NotSameSNumString) {
 	int result = stringcheck.CheckStringNum("asd", "qwer");
 	EXPECT_EQ(40, result);
 }
+
+TEST(CheckString, GetStringKind)
+{
+	StringCheck stringcheck;
+	int result = stringcheck.GetStringKind("abb");
+	EXPECT_EQ(2, result);
+}
+
+TEST(CheckString, GetStringKindAll)
+{
+	StringCheck stringcheck;
+	int result = stringcheck.GetStringKindAll("abb", "bcc");
+	EXPECT_EQ(3, result);
+}
+
+TEST(CheckString, GetStringCountCompare)
+{
+	StringCheck stringcheck;
+	int result = stringcheck.GetStringCountCompare("abb", "bcc");
+	EXPECT_EQ(40/3*1, result);
+}
