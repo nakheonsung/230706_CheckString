@@ -12,3 +12,9 @@ TEST(CheckString, SameNumString) {
 	int result = stringcheck.CheckStringNum("asd", "qwe");
 	EXPECT_EQ(60, result);
 }
+
+TEST(CheckString, NotSameSNumString) {
+	StringCheck stringcheck;
+	int result = stringcheck.CheckStringNum("asd", "qwer");
+	EXPECT_EQ(45, result);
+}
